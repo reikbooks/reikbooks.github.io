@@ -469,3 +469,236 @@ h4 {
     padding: 2rem 0;
   }
 }
+
+/* ===============================
+   WP BLOCK: COLUMNS
+   =============================== */
+.wp-block-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-bottom: 1.75em;
+}
+
+@media (min-width: 782px) {
+  .wp-block-columns {
+    flex-wrap: nowrap;
+  }
+}
+
+.wp-block-column {
+  flex-grow: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+/* ===============================
+   WP BLOCK: DETAILS (Genre list)
+   =============================== */
+.wp-block-details {
+  box-sizing: border-box;
+  margin-bottom: 1em;
+}
+
+.wp-block-details summary {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: #000;
+}
+
+.wp-block-details p {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+@supports (font-variation-settings: normal) {
+  .wp-block-details p {
+    font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  }
+}
+
+/* ===============================
+   WP BLOCK: MEDIA TEXT
+   =============================== */
+.wp-block-media-text {
+  box-sizing: border-box;
+  direction: ltr;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  grid-template-rows: auto;
+  margin: 0 0 2rem;
+}
+
+.wp-block-media-text .wp-block-media-text__media {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+}
+
+.wp-block-media-text .wp-block-media-text__media img {
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+  direction: ltr;
+  grid-column: 2;
+  grid-row: 1;
+  padding: 0 0 0 2em;
+  word-break: break-word;
+}
+
+.wp-block-media-text .wp-block-media-text__content p {
+  margin: 0 0 1em;
+}
+
+@media (max-width: 781px) {
+  .wp-block-media-text.is-stacked-on-mobile {
+    grid-template-columns: 100%;
+  }
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 1em 0 0;
+  }
+}
+
+/* ===============================
+   HEADING WITH BACKGROUND LABELS
+   =============================== */
+.has-secondary-background-color.has-background {
+  background-color: #6d6d6d;
+  color: #fff;
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.0333em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.has-accent-background-color.has-background {
+  background-color: #cd2653;
+  color: #fff;
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.0333em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.has-subtle-background-background-color.has-background {
+  background-color: #dcd7ca;
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.0333em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+/* ===============================
+   SOCIAL LINKS
+   =============================== */
+.wp-block-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+
+.wp-block-social-links li {
+  margin: 0;
+}
+
+.wp-social-link {
+  background: #f0f0f0;
+  border-radius: 9999px;
+  color: #444;
+  display: block;
+  padding: 0.5em;
+  transition: transform 0.1s ease;
+}
+
+.wp-social-link:hover {
+  transform: scale(1.1);
+}
+
+.wp-social-link a {
+  align-items: center;
+  display: flex;
+  line-height: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.wp-social-link svg {
+  fill: currentColor;
+  height: 1em;
+  width: 1em;
+}
+
+.wp-social-link-instagram {
+  background: #f00075;
+  color: #fff;
+}
+
+.wp-social-link-mail {
+  background: #000;
+  color: #fff;
+}
+
+/* ===============================
+   BUTTON (subscribe)
+   =============================== */
+.wp-block-button {
+  margin: 1em 0;
+}
+
+.wp-block-button__link {
+  background: #cd2653;
+  border-radius: 9999px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.125em;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  text-align: center;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.wp-block-button__link:hover {
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ===============================
+   TO THE TOP
+   =============================== */
+.to-the-top {
+  color: #6d6d6d;
+  display: block;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.to-the-top:hover {
+  text-decoration: underline;
+}
