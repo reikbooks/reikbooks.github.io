@@ -1,0 +1,172 @@
+/* Rei K. Books — Clean typography, inspired by Twenty Twenty */
+/* System font stack for fast loading */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f5f5f5;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #555;
+  --accent: #0073aa;
+  --accent-hover: #005a87;
+  --border: #ddd;
+  --radius: 4px;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* Header */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 0 24px;
+  text-align: center;
+}
+
+.site-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.site-title a {
+  color: var(--text);
+}
+
+.site-title a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-description {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.main-nav {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.main-nav a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main */
+main {
+  padding: 48px 0;
+}
+
+.hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 48px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Sections */
+h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent);
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+/* Series cards */
+.series-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.2s;
+}
+
+.series-card:hover {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.series-tagline {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-small {
+  font-size: 0.75rem;
+  margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  html { font-size: 16px; }
+  .site-header { padding: 32px 0 16px; }
+  .site-title { font-size: 1.6rem; }
+  main { padding: 32px 0; }
+  .hero { padding: 24px; }
+}
