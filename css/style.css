@@ -767,3 +767,20 @@ h4 {
   width: 1px;
   word-wrap: normal !important;
 }
+
+/* ===============================
+   COVER GALLERY (for sub-pages)
+   =============================== */
+.cover-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.cover-gallery img {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  height: auto;
+  width: 200px;
+}
