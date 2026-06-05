@@ -704,6 +704,55 @@ h4 {
 }
 
 /* ===============================
+   BOOK GRID (cover cards)
+   =============================== */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.book-cover-card {
+  background: #fff;
+  border: 0.1rem solid #dedfdf;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.book-cover-card img {
+  margin-bottom: 1rem;
+  width: 100%;
+  height: auto;
+}
+
+.book-cover-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5em;
+}
+
+.book-cover-card p {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin: 0 0 1em;
+}
+
+.book-cover-card a {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 500px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .book-cover-card {
+    padding: 1rem;
+  }
+}
+
+/* ===============================
    SCREEN READER TEXT
    =============================== */
 .screen-reader-text {
