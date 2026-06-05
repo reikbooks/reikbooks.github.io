@@ -1,39 +1,63 @@
 /*!
-Twenty Twenty Theme — exact replication for reikbooks.github.io
-Colors, typography, spacing matched to WordPress.com Twenty Twenty
-*/
+ * Twenty Twenty Theme — exact replica for reikbooks.github.io
+ * Based on WordPress Twenty Twenty v3.0 by the WordPress team
+ * Colors: reikbooks.wordpress.com customizer (accent #cd2653)
+ */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* Reset */
+html, body {
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6, p, blockquote, address, big, cite, code, em, font, img, small, strike, sub, sup, li, ol, ul, fieldset, form, label, legend, button, table, caption, tr, th, td {
+  border: none;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+}
+
+blockquote::before, blockquote::after {
+  content: "";
+}
+
+/* Document Setup */
 html {
-  overflow-x: hidden;
+  font-size: 62.5%; /* 1rem = 10px */
 }
 
 body {
   background: #f5efe0;
+  box-sizing: border-box;
   color: #000;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.8rem;
   letter-spacing: -0.015em;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+  text-align: left;
+}
+
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  word-break: break-word;
+  word-wrap: break-word;
 }
 
 a {
   color: #cd2653;
   text-decoration: underline;
-  text-decoration-thickness: 0.075em;
 }
 
-a:hover,
-a:focus {
-  color: #cd2653;
+a:hover, a:focus {
   text-decoration: none;
 }
 
@@ -43,107 +67,102 @@ img {
   max-width: 100%;
 }
 
-/* Container */
+/* Section Inner */
 .section-inner {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
-  width: calc(100% - 40px);
+  max-width: 120rem; /* 1200px */
+  width: calc(100% - 4rem);
 }
 
-/* ============================================
-   HEADER
-   ============================================ */
-.header-footer-group {
-  color: #000;
-}
-
+/* ===============================
+   SITE HEADER
+   =============================== */
 #site-header {
   background: #fff;
-  border-bottom: 0.1rem solid #dcd7ca;
-  padding: 2.5rem 0;
   position: relative;
 }
 
 .header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width: 168rem;
+  padding: 3.15rem 0;
+  z-index: 100;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 4rem);
 }
 
 .header-titles-wrapper {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
-  width: 100%;
+  padding: 0 4rem;
+  text-align: center;
 }
 
-.header-titles {
-  text-align: center;
-  width: 100%;
+.site-title,
+.site-description {
+  margin: 0;
 }
 
 .site-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.2;
-  margin: 0;
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .site-title a {
   color: #000;
+  display: block;
   text-decoration: none;
 }
 
-.site-title a:hover {
-  color: #cd2653;
+.site-title a:hover,
+.site-title a:focus {
+  text-decoration: underline;
 }
 
 .site-description {
+  margin-top: 1rem;
   color: #6d6d6d;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 500;
-  letter-spacing: -0.03125em;
-  line-height: 1.2;
-  margin: 0.5rem 0 0;
+  letter-spacing: -0.0311em;
 }
 
-/* Navigation */
+/* Primary Menu (navigation) */
 .header-navigation-wrapper {
-  display: none; /* Simpler nav for static site */
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
-/* ============================================
-   PRIMARY NAV (custom for static site)
-   ============================================ */
 .primary-menu-wrapper {
-  margin-top: 2rem;
-  text-align: center;
+  width: 100%;
+  max-width: 120rem;
 }
 
 .primary-menu {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 2rem;
   justify-content: center;
   list-style: none;
-  margin: 0;
+  margin: 0 -1.5rem;
   padding: 0;
 }
 
 .primary-menu li {
   margin: 0;
   padding: 0;
-  position: relative;
 }
 
 .primary-menu a {
   color: #cd2653;
   display: block;
-  font-size: 1.125rem;
-  font-weight: 600;
-  letter-spacing: -0.0275em;
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: -0.0277em;
+  padding: 0.5rem 1.5rem;
   text-decoration: none;
 }
 
@@ -151,111 +170,164 @@ img {
   text-decoration: underline;
 }
 
-/* ============================================
+/* ===============================
    MAIN CONTENT
-   ============================================ */
+   =============================== */
 main {
-  padding: 4rem 0;
+  padding: 5rem 0;
 }
 
 .page-content {
+  max-width: 120rem;
+  width: calc(100% - 4rem);
   margin: 0 auto;
-  max-width: 580px;
-  width: 100%;
 }
 
-.entry-content {
-  font-size: 1.125rem;
-  line-height: 1.7;
-}
-
-.entry-content p {
-  margin: 0 0 1.5em;
-}
-
-.entry-content h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.2;
-  margin: 3.5rem 0 2rem;
-  color: #000;
-  border: none;
-  padding: 0;
-}
-
-.entry-content h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.2;
-  margin: 3rem 0 1.5rem;
-  color: #000;
-}
-
-.entry-content h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1.2;
-  margin: 2.5rem 0 1rem;
-  color: #000;
-}
-
-/* Entry (page) header */
+/* Entry Title */
 .entry-header {
   margin-bottom: 3rem;
   text-align: center;
 }
 
+h1.entry-title,
+h2.entry-title {
+  margin: 0;
+}
+
 .entry-title {
-  font-size: 3rem;
+  font-size: 2rem;
+  letter-spacing: -0.0315em;
+  line-height: 1.4;
+}
+
+.entry-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.entry-title a:focus,
+.entry-title a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   ENTRY CONTENT
+   =============================== */
+.entry-content {
+  line-height: 1.5;
+}
+
+.entry-content > * {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.25em;
+  max-width: 58rem; /* 580px — content column width */
+  width: calc(100% - 4rem);
+}
+
+.entry-content > *:first-child {
+  margin-top: 0;
+}
+
+.entry-content > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Wide elements break out of the narrow column */
+.entry-content > .alignwide,
+.entry-content > .alignfull {
+  max-width: none;
+  width: auto;
+}
+
+.entry-content > .alignwide {
+  max-width: 120rem;
+  width: calc(100% - 4rem);
+}
+
+.entry-content a:hover,
+.entry-content a:focus {
+  text-decoration: none;
+}
+
+/* Entry content text (body copy) uses serif */
+.entry-content p,
+.entry-content ol,
+.entry-content ul,
+.entry-content dl,
+.entry-content dt {
+  font-family: NonBreakingSpaceOverride, "Hoefler Text", Garamond, "Times New Roman", serif;
+  letter-spacing: normal;
+  line-height: 1.4;
+}
+
+/* Entry content headings use sans-serif */
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  margin: 3.5rem auto 2rem;
+}
+
+@supports (font-variation-settings: normal) {
+  .entry-content h1,
+  .entry-content h2,
+  .entry-content h3,
+  .entry-content h4,
+  .entry-content h5,
+  .entry-content h6 {
+    font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  }
+}
+
+h1 {
+  font-size: 3.6rem;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.2;
-  margin: 0;
 }
 
-/* Separator */
-.entry-content hr,
-.separator {
+h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+h4 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+/* Entry content HR */
+.entry-content hr {
   background: #dcd7ca;
-  border: none;
+  border: 0;
   height: 0.2rem;
-  margin: 3rem 0;
+  margin: 4rem auto;
+  max-width: 58rem;
 }
 
-/* ============================================
-   POST META (secondary text)
-   ============================================ */
-.post-meta,
-.entry-content .wp-block-archives li,
-.entry-content .wp-block-categories li,
-.entry-content .wp-block-latest-posts li {
-  color: #6d6d6d;
-}
-
-/* ============================================
-   COVER / HERO block
-   ============================================ */
-.cover-block {
-  background: #fff;
-  border: 0.1rem solid #dcd7ca;
-  padding: 2rem;
-}
-
-.cover-block p {
-  margin: 0;
-}
-
-/* ============================================
-   BOOK / SERIES CARDS (custom for this site)
-   ============================================ */
+/* ===============================
+   BOOK/Series cards
+   =============================== */
 .book-card {
   background: #fff;
-  border: 0.1rem solid #dcd7ca;
-  padding: 2rem 2.5rem;
-  margin-bottom: 2rem;
+  border: 0.1rem solid #dedfdf;
+  padding: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .book-card h3,
@@ -267,94 +339,46 @@ main {
   margin-bottom: 0;
 }
 
-/* ============================================
-   BUTTONS
-   ============================================ */
-.button,
-.faux-button,
-.wp-block-button__link {
-  background: #cd2653;
-  border: none;
-  border-radius: 0;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 1.125rem;
-  font-weight: 600;
-  letter-spacing: 0.0333em;
-  line-height: 1.25;
-  padding: 1.1rem 2.5rem;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.button:hover,
-.faux-button:hover,
-.wp-block-button__link:hover {
-  background: #000;
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Outline button */
-.wp-block-button.is-style-outline .wp-block-button__link {
-  background: transparent;
-  border: 0.2rem solid currentColor;
-  color: #cd2653;
-}
-
-.wp-block-button.is-style-outline .wp-block-button__link:hover {
-  background: #cd2653;
-  color: #fff;
-}
-
-/* ============================================
-   CALLOUT / QUOTE
-   ============================================ */
-blockquote {
-  border-color: #cd2653;
-  border-style: solid;
-  border-width: 0 0 0 0.2rem;
-  color: #6d6d6d;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.4;
-  margin: 3rem 0;
-  padding: 0 0 0 2rem;
-}
-
-blockquote p {
-  margin: 0;
-}
-
 .series-tagline {
+  border-left: 0.2rem solid #cd2653;
   color: #6d6d6d;
-  font-size: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 2.4rem;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.4;
-  border-left: 0.2rem solid #cd2653;
   padding-left: 2rem;
 }
 
-/* ============================================
-   LINKS IN CONTENT
-   ============================================ */
-.entry-content a {
-  color: #cd2653;
+@supports (font-variation-settings: normal) {
+  .series-tagline {
+    font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  }
 }
 
-/* ============================================
+/* Home hero */
+.home-hero {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+}
+
+@supports (font-variation-settings: normal) {
+  .home-hero {
+    font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  }
+}
+
+/* ===============================
    FOOTER
-   ============================================ */
+   =============================== */
 #site-footer {
   background: #fff;
-  border-top: 0.1rem solid #dcd7ca;
-  color: #000;
-  font-size: 1rem;
+  border-top: 0.1rem solid #dedfdf;
+  margin-top: 5rem;
   padding: 3rem 0;
-  text-align: center;
 }
 
 .footer-inner {
@@ -362,33 +386,45 @@ blockquote p {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem 2rem;
 }
 
 .footer-inner p {
   margin: 0;
+  font-size: 1.8rem;
 }
 
-.footer-inner a {
+#site-footer a {
   color: #cd2653;
+  text-decoration: none;
+}
+
+#site-footer a:hover {
+  text-decoration: underline;
 }
 
 .footer-credits {
   color: #6d6d6d;
-  font-size: 0.85rem;
+  font-size: 1.6rem;
   margin-top: 1rem;
+  text-align: center;
 }
 
 .powered-by-wordpress {
   color: #6d6d6d;
+  font-size: 1.6rem;
 }
 
-/* ============================================
+/* ===============================
    RESPONSIVE
-   ============================================ */
+   =============================== */
 @media (max-width: 700px) {
-  body {
-    font-size: 16px;
+  .header-inner {
+    padding: 2rem 0;
+  }
+
+  .header-titles-wrapper {
+    padding: 0 2rem;
   }
 
   .site-title {
@@ -396,36 +432,40 @@ blockquote p {
   }
 
   .site-description {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
   }
 
   .entry-title {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 
-  .entry-content h2 {
-    font-size: 1.6rem;
-  }
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2.6rem; }
+  h3 { font-size: 2.2rem; }
+  h4 { font-size: 1.8rem; }
 
-  .entry-content h3 {
-    font-size: 1.3rem;
+  .home-hero {
+    font-size: 1.8rem;
   }
 
   .series-tagline {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
 
   .book-card {
-    padding: 1.5rem;
+    padding: 2rem;
+  }
+
+  .primary-menu a {
+    font-size: 1.6rem;
   }
 
   .footer-inner {
     flex-direction: column;
     text-align: center;
   }
-}
 
-/* Home page specific: bigger hero */
-.home-hero {
-  font-size: 1.25rem;
+  #site-footer {
+    padding: 2rem 0;
+  }
 }
