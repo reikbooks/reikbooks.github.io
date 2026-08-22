@@ -642,10 +642,13 @@ figure.wp-block-gallery.aligncenter{margin-bottom:3rem;margin-top:3rem}figure.wp
 	[class*="wp-block"].alignfull [class*="__inner-container"] > .wp-block-image .alignright{max-width:29rem}.wp-block-pullquote.is-style-solid-color.alignleft::before,
 	.wp-block-pullquote.is-style-solid-color.alignright::before{top:0}}@media ( max-width: 800px ){.customize-partial-edit-shortcuts-shown .footer-nav-widgets-wrapper .footer-inner.section-inner{width:calc(100% - 8rem)}}
 
-/* === site-repair v2: centering kolom konten TANPA padding ekstra.
-   Padding cuma di antara cover & blurb (book-hero gap), sisanya default theme. === */
+/* === site-repair v3 ===
+   1) Kolom konten dilebarin (58rem terlalu sempit di desktop, sisa ruang kosong gede)
+   2) Blok alignwide DILARANG bleed keluar kolom (dulu margin-right -320px -> konten kanan kepotong)
+   3) Padding antara cover & blurb cukup lewat book-hero gap */
 .singular .post-inner.thin,
-.post-inner.thin{max-width:58rem;margin-left:auto;margin-right:auto;}
+.post-inner.thin{max-width:72rem;margin-left:auto;margin-right:auto;}
+.entry-content .alignwide{max-width:100%;width:auto;margin-left:auto;margin-right:auto;}
 .wp-block-columns.book-hero{gap:2rem;}
 @media (min-width:600px){
 	.wp-block-columns.book-hero > .wp-block-column:first-child{flex:0 0 40%;flex-basis:40%!important;}
