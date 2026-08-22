@@ -351,31 +351,41 @@ body.showing-menu-modal { overflow: hidden; }
 
 
 <style>
+/* Centered Book X of Series */
+.wp-block-heading.product-subtitle { text-align:center !important; font-size:1.6rem; margin:0.8em 0 0.2em; }
+/* Column: top-align cover */
+.wp-block-columns.book-hero { align-items:flex-start !important; }
+.wp-block-column.book-cover-col { flex-basis:40%; align-self:flex-start; }
+.wp-block-column.book-info-col { flex-basis:60%; align-self:flex-start; }
+.book-cover-col img { display:block; }
+/* Chapter button-style titles */
+.ch-title-btn { display:block; width:100%; text-align:left; background:#f0e7d8; color:#222; border:none; border-radius:8px; padding:0.9em 1em; font-size:1.05rem; font-weight:600; cursor:pointer; margin:0.15em 0 0.4em; }
+.ch-title-btn.paid { background:#e8e2d8; }  /* dimmed for paid */
+.ch-title-btn .wc { color:#777; font-size:0.85em; }
+.ch-content { display:none; }
+.ch-content.open { display:block; padding:0.4em; }
+.ch-body { padding:0.6em 0; }
+.ch-body.paid-locked { background:#f6f4f0; padding:1.5em; border-radius:10px; text-align:center; }
+.ch-close { background:none; border:none; color:#ab8353; cursor:pointer; font-size:0.9rem; text-decoration:underline; }
+/* Slider */
 .series-slider { display:flex; overflow-x:auto; gap:1rem; padding:1rem 0; -webkit-overflow-scrolling:touch; }
-.series-slide { flex:0 0 100px; text-align:center; }
+.series-slide { flex:0 0 110px; text-align:center; }
 .series-slide img { width:100%; border-radius:4px; box-shadow:0 1px 4px rgba(0,0,0,0.15); }
 .series-slide.active img { border:3px solid #cd2653; }
-.series-slide .sl-title { font-size:0.75rem; margin-top:0.3em; line-height:1.3; }
+.series-slide .sl-title { font-size:0.72rem; margin-top:0.3em; line-height:1.3; }
 .series-slide a { text-decoration:none; color:inherit; }
-.ch-summary { cursor:pointer; padding:0.6em 0; font-size:1rem; border-bottom:1px solid #eee; list-style:none; display:flex; align-items:center; gap:0.5em; }
-.ch-summary::-webkit-details-marker { display:none; }
-.ch-summary::before { content:"▸"; transition:transform 0.2s; }
-.ch-summary[open]::before { transform:rotate(90deg); }
-.ch-summary.free { color:#000; }
-.ch-summary.paid { color:#999; }
-.ch-summary .wc { color:#999; font-size:0.85em; }
-.ch-body { padding:1em 0; }
-.ch-body.paid-locked { background:#f9f7f3; padding:1.5em; border-radius:8px; text-align:center; }
-h2.product-subtitle { text-align:center; font-size:1.5rem; margin:0.5em 0 0.1em; }
 </style>
+<script>
+function toggleCh(id, btn){ var c=document.querySelector('[id="'+id+'"] .ch-content'); if(c){ c.classList.toggle('open'); } }
+</script>
 
 <h2 class="wp-block-heading product-subtitle">Book 1 of <a href="/books/masamune-clan/en/">Masamune Clan Series</a></h2>
 
-<div class="wp-block-columns is-layout-flex wp-block-columns-is-layout-flex">
-  <div class="wp-block-column" style="flex-basis:40%;vertical-align:top;">
+<div class="wp-block-columns book-hero no-js" style="display:flex;flex-wrap:nowrap;">
+  <div class="wp-block-column book-cover-col" style="flex-basis:40%">
     <figure class="wp-block-image size-large"><img src="/images/books/masamune/book-2.jpg" alt="The Clan Heir cover" loading="lazy"/></figure>
   </div>
-  <div class="wp-block-column" style="flex-basis:60%;">
+  <div class="wp-block-column book-info-col" style="flex-basis:60%">
     <p class="wp-block-paragraph">The Clan Head’s Firstborn Son. Ninja graduation exam. When the bar is set sky-high.What if failure is not an option?Tadashi, heir to the Masamune clan, faces his father’s impossible demands day in and day out. His graduation exam? A mission that makes seasoned ninjas sweat—one his father insists he complete. But here’s the catch: he hasn’t even perfected his clan’s signature technique.Can Tadashi rise to the challenge and fulfill his destiny?If you&#x27;re a fan of Japanese manga, anime, or light novels, you might enjoy this book.</p>
     <div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
       <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://play.google.com/store/books/details?id=MzkXEQAAQBAJ" target="_blank" rel="noreferrer noopener">Read on Google Play Books</a></div>
@@ -384,8 +394,8 @@ h2.product-subtitle { text-align:center; font-size:1.5rem; margin:0.5em 0 0.1em;
 </div>
 
 <hr class="wp-block-separator"/>
-<h2 class="wp-block-heading">Free Sample</h2>
-<details class="ch-expand"><summary class="ch-summary free">Chapter 1 <span class="wc">(1545 words)</span></summary><div class="ch-body"><p class="wp-block-paragraph">T he morning sun, warm on my back, felt like a brand as I slipped through a gap in the bamboo fence. The bushes lining the path offered little cover, but anything to avoid the judging eyes near the Masamune clan complex’s main gate.</p>
+<h2 class="wp-block-heading">Free Sample — Read Free Chapter(s)</h2>
+<div class="ch-block" id="ch-1"><button class="ch-title-btn" onclick="toggleCh('ch-1', this)">Chapter 1 <span class="wc">(1545 words)</span></button><div class="ch-content"><div class="ch-body"><p class="wp-block-paragraph">T he morning sun, warm on my back, felt like a brand as I slipped through a gap in the bamboo fence. The bushes lining the path offered little cover, but anything to avoid the judging eyes near the Masamune clan complex’s main gate.</p>
 <p class="wp-block-paragraph">Elder Fei would have a fit if he knew I was sneaking out. Two hours of kneeling in seiza position, stuck with both legs tucked under me, listening to lectures about a clan leader’s courage.</p>
 <p class="wp-block-paragraph">I knew that.</p>
 <p class="wp-block-paragraph">But right now, facing anyone felt impossible. No one said it to my face, but the whispers followed me like shadows. This past month, I’d become the hottest gossip in town.</p>
@@ -448,8 +458,8 @@ h2.product-subtitle { text-align:center; font-size:1.5rem; margin:0.5em 0 0.1em;
 <p class="wp-block-paragraph">There was so much to do. Weapons and supplies to gather, a route to plan, contingencies upon contingencies to account for. The princess’s life, and the Masamune clan’s honor, rested on my shoulders. No pressure.</p>
 <p class="wp-block-paragraph">Leaving the academy, I walked taller, my steps lighter despite the weight of the mission. I had no choice but to face this head-on. The sun felt warm on my face, and I took a deep breath, steeling my resolve.</p>
 <p class="wp-block-paragraph">Father, I won’t let you down. I will make you proud.</p>
-<p class="wp-block-paragraph">***</p></div></details>
-<details class="ch-expand"><summary class="ch-summary free">Chapter 2 <span class="wc">(2801 words)</span></summary><div class="ch-body"><p class="wp-block-paragraph">A nko and I had been ready and waiting in the palace hall since sunrise. My stomach was already doing nervous flips. Escorting Princess Kaguya was a huge responsibility, even with Anko at my side.</p>
+<p class="wp-block-paragraph">***</p><p class="close-ch"><button class="ch-close" onclick="toggleCh('ch-1', document.querySelector('[data-cid=ch-1]'))">✕ Close</button></p></div></div></div>
+<div class="ch-block" id="ch-2"><button class="ch-title-btn" onclick="toggleCh('ch-2', this)">Chapter 2 <span class="wc">(2801 words)</span></button><div class="ch-content"><div class="ch-body"><p class="wp-block-paragraph">A nko and I had been ready and waiting in the palace hall since sunrise. My stomach was already doing nervous flips. Escorting Princess Kaguya was a huge responsibility, even with Anko at my side.</p>
 <p class="wp-block-paragraph">I’d gone over the planned route with the royal guard captain several times, just to be sure. Then I triple-checked the carriage for Princess Kaguya, making sure it was roadworthy and secure. Not that I could spot sabotage if it was staring me in the face—that was Anko’s expertise.</p>
 <p class="wp-block-paragraph">The plan was for the Princess to ride inside the carriage, naturally, with a palace soldier as the coachman. I would ride ahead on horseback, scouting the path and keeping an eye out for trouble, while Anko guarded from behind.</p>
 <p class="wp-block-paragraph">A royal steward, looking incredibly important, asked us to wait in the hall until Princess Kaguya finished breakfast. I was hoping we could leave before eight o’clock. That way, we could make it to Sakuragi Village by nightfall.</p>
@@ -559,8 +569,8 @@ h2.product-subtitle { text-align:center; font-size:1.5rem; margin:0.5em 0 0.1em;
 <p class="wp-block-paragraph">What could I do?</p>
 <p class="wp-block-paragraph">The relentless rain offered no solace, only a chilling echo to the turmoil within me. I bit back a groan, my shoulders slumping under the immense burden of my failure.</p>
 <p class="wp-block-paragraph">Forgive me, Father. I have brought shame upon us all.</p>
-<p class="wp-block-paragraph">***</p></div></details>
-<details class="ch-expand"><summary class="ch-summary free">Chapter 3 <span class="wc">(2097 words)</span></summary><div class="ch-body"><p class="wp-block-paragraph">I continued the journey, taking over the reins from the coachman. It was already late, and Sakuragi village was still far away. I was afraid we wouldn’t make it to the village by nightfall. There were no other villages to stop at along our route. I wanted to keep going through the night, but the heavy rain had flooded the road.</p>
+<p class="wp-block-paragraph">***</p><p class="close-ch"><button class="ch-close" onclick="toggleCh('ch-2', document.querySelector('[data-cid=ch-2]'))">✕ Close</button></p></div></div></div>
+<div class="ch-block" id="ch-3"><button class="ch-title-btn" onclick="toggleCh('ch-3', this)">Chapter 3 <span class="wc">(2097 words)</span></button><div class="ch-content"><div class="ch-body"><p class="wp-block-paragraph">I continued the journey, taking over the reins from the coachman. It was already late, and Sakuragi village was still far away. I was afraid we wouldn’t make it to the village by nightfall. There were no other villages to stop at along our route. I wanted to keep going through the night, but the heavy rain had flooded the road.</p>
 <p class="wp-block-paragraph">Twice already, the carriage had nearly gotten stuck in the mud. Without Anko and the coachman’s help, I would have never been able to get it back on the road. The lack of moonlight didn’t help; it was hard to see where I was going.</p>
 <p class="wp-block-paragraph">I didn’t want to stop in the open, though. That would only invite trouble if bandits passed by.</p>
 <p class="wp-block-paragraph">In the end, I decided to stop near Moon Ravine Cave. The entrance was easily accessible from the road. When I explained my plan to Princess Kaguya, she simply nodded.</p>
@@ -636,25 +646,24 @@ h2.product-subtitle { text-align:center; font-size:1.5rem; margin:0.5em 0 0.1em;
 <p class="wp-block-paragraph">My heart seized, a cold fist squeezing the air from my lungs.</p>
 <p class="wp-block-paragraph">It wasn’t like the stories said, where time slowed down. It all happened so fast, yet I saw it all. The shock on her face as she fell, then the small, sad smile she gave me. A silent farewell.</p>
 <p class="wp-block-paragraph">And then, she was gone.</p>
-<p class="wp-block-paragraph">***</p></div></details>
-<details class="ch-expand"><summary class="ch-summary paid">Chapter 4 🔒 <span class="wc">(2756 words)</span></summary><div class="ch-body paid-locked"><p class="wp-block-paragraph">This chapter is available on Google Play.</p><div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex"><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://play.google.com/store/books/details?id=MzkXEQAAQBAJ" target="_blank" rel="noreferrer noopener">Read on Google Play Books</a></div></div></div></details>
-
+<p class="wp-block-paragraph">***</p><p class="close-ch"><button class="ch-close" onclick="toggleCh('ch-3', document.querySelector('[data-cid=ch-3]'))">✕ Close</button></p></div></div></div>
+<div class="ch-block" id="ch-4"><button class="ch-title-btn paid" onclick="toggleCh('ch-4', this)">Chapter 4 🔒 <span class="wc">(2756 words)</span></button><div class="ch-content"><div class="ch-body paid-locked"><p class="wp-block-paragraph">This chapter is available on Google Play.</p><div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex"><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://play.google.com/store/books/details?id=MzkXEQAAQBAJ" target="_blank" rel="noreferrer noopener">Read on Google Play Books</a></div></div><p class="ch-close"><button class="ch-close" onclick="toggleCh('ch-4', this)">✕</button></p></div></div></div>
 <hr class="wp-block-separator"/>
 <h2 class="wp-block-heading">Masamune Clan Series</h2>
 <div class="series-slider">
 <div class="series-slide active"><img src="/images/books/masamune/book-2.jpg" alt="The Clan Heir cover" loading="lazy"/><p class="sl-title">The Clan Heir</p></div>
-<div class="series-slide"><a href="https://play.google.com/store/books/details?id=fkIhEQAAQBAJ" target="_blank"><img src="/images/books/masamune/book-3.jpg" alt="He&#x27;s My Brother cover" loading="lazy"/></a><p class="sl-title">He&#x27;s My Brother</p></div>
-<div class="series-slide"><a href="https://play.google.com/store/books/details?id=4dAjEQAAQBAJ" target="_blank"><img src="/images/books/masamune/book-4.jpg" alt="Arrow cover" loading="lazy"/></a><p class="sl-title">Arrow</p></div>
-<div class="series-slide"><a href="https://play.google.com/store/books/details?id=_2wnEQAAQBAJ" target="_blank"><img src="/images/books/masamune/book-5.jpg" alt="Seal cover" loading="lazy"/></a><p class="sl-title">Seal</p></div>
-<div class="series-slide"><a href="https://play.google.com/store/books/details?id=5agtEQAAQBAJ" target="_blank"><img src="/images/books/masamune/book-6.jpg" alt="Twin Blades cover" loading="lazy"/></a><p class="sl-title">Twin Blades</p></div>
-<div class="series-slide"><a href="https://play.google.com/store/books/details?id=N6w0EQAAQBAJ" target="_blank"><img src="/images/books/masamune/book-7.jpg" alt="Blue cover" loading="lazy"/></a><p class="sl-title">Blue</p></div>
-<div class="series-slide"><a href="https://play.google.com/store/books/details?id=YkI_EQAAQBAJ" target="_blank"><img src="/images/books/masamune/book-8.jpg" alt="The Last Message cover" loading="lazy"/></a><p class="sl-title">The Last Message</p></div>
-<div class="series-slide"><a href="https://play.google.com/store/books/details?id=jklEEQAAQBAJ" target="_blank"><img src="/images/books/masamune/book-9.jpg" alt="Over and Over Again cover" loading="lazy"/></a><p class="sl-title">Over and Over Again</p></div>
-<div class="series-slide"><a href="https://play.google.com/store/books/details?id=TgRMEQAAQBAJ" target="_blank"><img src="/images/books/masamune/book-10.jpg" alt="Scarlet Steel cover" loading="lazy"/></a><p class="sl-title">Scarlet Steel</p></div>
-<div class="series-slide"><a href="https://play.google.com/store/books/details?id=6KxUEQAAQBAJ" target="_blank"><img src="/images/books/masamune/book-11.jpg" alt="Yoroshiku cover" loading="lazy"/></a><p class="sl-title">Yoroshiku</p></div>
-<div class="series-slide"><a href="https://play.google.com/store/books/details?id=POR1EQAAQBAJ" target="_blank"><img src="/images/books/masamune/book-12.jpg" alt="Broken Link cover" loading="lazy"/></a><p class="sl-title">Broken Link</p></div>
-<div class="series-slide"><a href="https://play.google.com/store/books/details?id=vKh4EQAAQBAJ" target="_blank"><img src="/images/books/masamune/book-13.jpg" alt="The Storeroom cover" loading="lazy"/></a><p class="sl-title">The Storeroom</p></div>
-<div class="series-slide"><a href="https://play.google.com/store/books/details?id=xI2CEQAAQBAJ" target="_blank"><img src="/images/books/masamune/book-14.jpg" alt="In Your Arms cover" loading="lazy"/></a><p class="sl-title">In Your Arms</p></div>
+<div class="series-slide"><a href="/books/masamune-clan/en/he-s-my-brother/"><img src="/images/books/masamune/book-3.jpg" alt="He&#x27;s My Brother cover" loading="lazy"/></a><p class="sl-title">He&#x27;s My Brother</p></div>
+<div class="series-slide"><a href="/books/masamune-clan/en/arrow/"><img src="/images/books/masamune/book-4.jpg" alt="Arrow cover" loading="lazy"/></a><p class="sl-title">Arrow</p></div>
+<div class="series-slide"><a href="/books/masamune-clan/en/seal/"><img src="/images/books/masamune/book-5.jpg" alt="Seal cover" loading="lazy"/></a><p class="sl-title">Seal</p></div>
+<div class="series-slide"><a href="/books/masamune-clan/en/twin-blades/"><img src="/images/books/masamune/book-6.jpg" alt="Twin Blades cover" loading="lazy"/></a><p class="sl-title">Twin Blades</p></div>
+<div class="series-slide"><a href="/books/masamune-clan/en/blue/"><img src="/images/books/masamune/book-7.jpg" alt="Blue cover" loading="lazy"/></a><p class="sl-title">Blue</p></div>
+<div class="series-slide"><a href="/books/masamune-clan/en/the-last-message/"><img src="/images/books/masamune/book-8.jpg" alt="The Last Message cover" loading="lazy"/></a><p class="sl-title">The Last Message</p></div>
+<div class="series-slide"><a href="/books/masamune-clan/en/over-and-over-again/"><img src="/images/books/masamune/book-9.jpg" alt="Over and Over Again cover" loading="lazy"/></a><p class="sl-title">Over and Over Again</p></div>
+<div class="series-slide"><a href="/books/masamune-clan/en/scarlet-steel/"><img src="/images/books/masamune/book-10.jpg" alt="Scarlet Steel cover" loading="lazy"/></a><p class="sl-title">Scarlet Steel</p></div>
+<div class="series-slide"><a href="/books/masamune-clan/en/yoroshiku/"><img src="/images/books/masamune/book-11.jpg" alt="Yoroshiku cover" loading="lazy"/></a><p class="sl-title">Yoroshiku</p></div>
+<div class="series-slide"><a href="/books/masamune-clan/en/broken-link/"><img src="/images/books/masamune/book-12.jpg" alt="Broken Link cover" loading="lazy"/></a><p class="sl-title">Broken Link</p></div>
+<div class="series-slide"><a href="/books/masamune-clan/en/the-storeroom/"><img src="/images/books/masamune/book-13.jpg" alt="The Storeroom cover" loading="lazy"/></a><p class="sl-title">The Storeroom</p></div>
+<div class="series-slide"><a href="/books/masamune-clan/en/in-your-arms/"><img src="/images/books/masamune/book-14.jpg" alt="In Your Arms cover" loading="lazy"/></a><p class="sl-title">In Your Arms</p></div>
 </div>
 
 </div><!-- .entry-content -->
