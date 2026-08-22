@@ -641,3 +641,24 @@ figure.wp-block-gallery.aligncenter{margin-bottom:3rem;margin-top:3rem}figure.wp
 	[class*="wp-block"].alignfull [class*="__inner-container"] > p .alignright,
 	[class*="wp-block"].alignfull [class*="__inner-container"] > .wp-block-image .alignright{max-width:29rem}.wp-block-pullquote.is-style-solid-color.alignleft::before,
 	.wp-block-pullquote.is-style-solid-color.alignright::before{top:0}}@media ( max-width: 800px ){.customize-partial-edit-shortcuts-shown .footer-nav-widgets-wrapper .footer-inner.section-inner{width:calc(100% - 8rem)}}
+
+/* === site-repair: exported pages use 'post-inner thin' without expected 'section-inner', so the content column lost its centering + side padding === */
+.singular .post-inner.thin,
+.post-inner.thin{
+	margin-left:auto;margin-right:auto;
+	max-width:58rem;
+	width:calc(100% - 4rem);
+	padding-left:2rem;padding-right:2rem;
+	box-sizing:border-box;
+}
+.entry-content{max-width:58rem;margin-left:auto;margin-right:auto;}
+/* === site-repair: keep cover + blurb side-by-side (not stacked) and add breathing room === */
+@media (min-width:600px){
+	.wp-block-columns.book-hero > .wp-block-column:first-child{flex:0 0 40%;flex-basis:40%!important;}
+	.wp-block-columns.book-hero > .wp-block-column:last-child{flex:1 1 60%;flex-basis:60%!important;}
+}
+.wp-block-columns.book-hero{gap:2rem;}
+@media (max-width:599px){
+	.wp-block-columns.book-hero{gap:0;}
+	.wp-block-columns.book-hero > .wp-block-column{padding-bottom:1.5rem;}
+}
