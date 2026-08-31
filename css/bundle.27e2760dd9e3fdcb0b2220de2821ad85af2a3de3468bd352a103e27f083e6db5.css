@@ -850,3 +850,33 @@ h2.product-subtitle{text-align:center !important;display:block;width:100%;font-s
 .book-card img{width:100%;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.15);transition:transform .15s ease;}
 .book-card:hover img{transform:scale(1.04);}
 .bc-title{font-size:0.8rem;margin-top:0.4em;line-height:1.3;}
+
+/* === Blog (Fase 1) === */
+.blog-list{display:flex;flex-direction:column;gap:1.8rem;padding:1.5rem 0;}
+.blog-card{display:flex;gap:1.4rem;text-decoration:none;color:inherit;background:#fff;border:1px solid #e3e1dd;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);transition:transform .15s ease, box-shadow .15s ease;}
+.blog-card:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.12);}
+.blog-card .bc-img{flex:0 0 34%;min-height:150px;}
+.blog-card .bc-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.blog-card .bc-body{flex:1 1 auto;padding:1.1rem 1.3rem 1.2rem;display:flex;flex-direction:column;gap:.35rem;}
+.blog-card .bc-cat{align-self:flex-start;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:#cd2653;border-radius:99px;padding:.2em .8em;}
+.blog-card .bc-title{font-size:1.35rem;font-weight:700;color:#161616;line-height:1.25;}
+.blog-card .bc-date{font-size:.8rem;color:#787878;}
+.blog-card .bc-excerpt{font-size:.95rem;color:#3a3a3a;}
+@media (max-width:599px){.blog-card{flex-direction:column;}.blog-card .bc-img{flex:0 0 auto;aspect-ratio:1200/630;}}
+.post-cover{width:min(58rem,100%);margin:0 auto 1.6rem;}
+.post-cover img{width:100%;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.15);}
+.blog-meta{text-align:center;font-size:.85rem;color:#787878;margin:0 auto 1.8rem;width:min(58rem,100%);}
+.post-meta .pm-cat{font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#cd2653;}
+.post-body h2{margin-top:1.6em;}
+.story-subtitle{text-align:center;font-style:italic;color:#575757;margin-bottom:2em;}
+.hook-box{background:#f6efe6;border-left:5px solid #ab8353;border-radius:0 8px 8px 0;padding:1.1em 1.4em;margin:2.2em auto .6em;font-size:1.05rem;width:min(58rem,100%);}
+.hook-box p{margin:0;}
+.hook-box a{color:#ab8353;font-weight:700;}
+.follow-box{background:#eef4f7;border-left:5px solid #4a7b9d;border-radius:0 8px 8px 0;padding:1em 1.4em;margin:1.6em auto;width:min(58rem,100%);}
+.wp-url-note{text-align:center;font-size:.95rem;width:min(58rem,100%);margin:0 auto;}
+.wp-url-note a{color:#ab8353;font-weight:700;}
+/* fix menu modal desktop: konten ter-full-bleed sampe kepotong di kiri */
+@media (min-width:782px){.menu-modal .modal-menu{left:auto;width:100%;}}
+.follow-box p{margin:0;}
+.post-related{text-align:center;margin:1.6em 0 0;font-size:.95rem;}
+.post-related a{color:#ab8353;}
